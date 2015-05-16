@@ -39,7 +39,13 @@ public class FibonacciWidgetLarge extends AppWidgetProvider {
         Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         if(hour > 12) {
-            hour -=12;
+            if(hour == 24) {
+                hour = 0;
+            }
+            else {
+                hour -= 12;
+            }
+
         }
         int minutes = c.get(Calendar.MINUTE);
         if(minutes == 60) {
