@@ -1,8 +1,11 @@
 package uk.co.thebillington.laxe;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.Intent;
 import android.widget.RemoteViews;
 
 import java.util.Calendar;
@@ -12,6 +15,14 @@ import java.util.Calendar;
  * Implementation of App Widget functionality.
  */
 public class FibonacciWidgetLarge extends AppWidgetProvider {
+
+    public static final String CLOCK_UPDATE = "co.uk.thebillington.laxe.FibonacciWidgetLarge.CLOCK_UPDATE";
+
+    private PendingIntent createUpdateIntent(Context context) {
+        Intent intent = new Intent(CLOCK_UPDATE);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        return pendingIntent;
+    }
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
@@ -26,11 +37,18 @@ public class FibonacciWidgetLarge extends AppWidgetProvider {
     @Override
     public void onEnabled(Context context) {
         // Enter relevant functionality for when the first widget is created
+        super.onEnabled(context);
+        AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(Calendar.SECOND, 1);
+        alarmManager.setRepeating(AlarmManager.RTC, calendar.getTimeInMillis(), 1000, createUpdateIntent(context));
     }
 
     @Override
     public void onDisabled(Context context) {
         // Enter relevant functionality for when the last widget is disabled
+        super.onDisabled(context);
     }
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
@@ -51,7 +69,8 @@ public class FibonacciWidgetLarge extends AppWidgetProvider {
         if(minutes == 60) {
             minutes = 0;
         }
-        minutes = (minutes) / 5 * 5;
+        double mins = (double) minutes / 5;
+        minutes = ((int)(mins + 0.5)) * 5;
 
         boolean fiveHour = false;
         boolean threeHour = false;
