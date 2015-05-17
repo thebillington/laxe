@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Laxe</string>
-    <string name="appwidget_text">EXAMPLE</string>
+    <string name="app_name">Fibonacci Clock</string>
     <string name="add_widget">Add widget</string>
 
 </resources>
