@@ -29,7 +29,7 @@ public class FibonacciWidgetSmall extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         Log.d(TAG, "onUpdate");
 
-        ComponentName componentName = new ComponentName(context, FibonacciWidgetLarge.class);
+        ComponentName componentName = new ComponentName(context, FibonacciWidgetSmall.class);
         int[] allWidgetIds = appWidgetManager.getAppWidgetIds(componentName);
 
         Intent intent = new Intent(context.getApplicationContext(), UpdateService.class);
@@ -37,7 +37,7 @@ public class FibonacciWidgetSmall extends AppWidgetProvider {
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, allWidgetIds);
         context.startService(intent);
 
-        PendingIntent pendingIntent = PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getService(context, 1, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         final AlarmManager m = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 

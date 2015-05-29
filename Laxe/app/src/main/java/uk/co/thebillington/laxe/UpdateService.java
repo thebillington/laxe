@@ -43,11 +43,6 @@ public class UpdateService extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-    /**
-     * Update widget contents
-     *
-     * @param widgetId ID to update
-     */
     private void updateWidget(int widgetId) {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(getApplicationContext());
 
