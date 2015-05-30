@@ -8,7 +8,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 /**
  * Created by thebillington on 17/05/2015.
@@ -27,7 +26,6 @@ public class FibonacciWidgetSmall extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        Log.d(TAG, "onUpdate");
 
         ComponentName componentName = new ComponentName(context, FibonacciWidgetSmall.class);
         int[] allWidgetIds = appWidgetManager.getAppWidgetIds(componentName);
