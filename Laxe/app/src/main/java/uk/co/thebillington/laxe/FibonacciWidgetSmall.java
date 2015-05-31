@@ -42,4 +42,10 @@ public class FibonacciWidgetSmall extends AppWidgetProvider {
         m.setRepeating(AlarmManager.RTC, System.currentTimeMillis(), 1000 * 60, pendingIntent);
     }
 
+    public void setAlpha(int alpha) {
+
+
+
+    }
+
 }
