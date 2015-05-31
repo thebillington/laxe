@@ -3,5 +3,44 @@
 
     <string name="app_name">Fibonacci Clock</string>
     <string name="add_widget">Add widget</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="part1">The Fibonacci Sequence is a sequence of numbers found to have significant meaning in Nature, Physics, Mathematics and almost all walks of science.
+    \n\nIn the sequence, each number is the sum of the preceding two numbers.
+    \n\nThe first number is 1. So the next number in the sequence is 1 + 0 = 1. (You add 0 as there is no previous number, you are technically adding nothing).
+    \n\nNow take the sum of the previous two numbers, 1 + 1 = 2. And again, 1 + 2 = 3. And again, 2 + 3 = 5.
+    \n\nSo that gives us the following sequence:</string>
+    <string name="part2">If we take this sequence we can visualize the first 5 values as squares:</string>
+    <string name="part3">In the above image we can see that we can count up all the numbers to 12 by adding different squares:
+    \n\n1 = 1
+    \n2 = 2
+    \n1 + 2= 3
+    \n2 + 2 = 4
+    \n5 = 5
+    \n5 + 1 = 6
+    \n5 + 2 = 7
+    \n5 + 3 = 8
+    \n5 + 3 + 1 = 9
+    \n5 + 3 + 2 = 10
+    \n5 + 3 + 2 + 1 = 11
+    \n5 + 3 + 2 + 1 + 1 = 12
+    \n\nBy using the above squares we can count all the hours from 1-12.
+    \n\nWe can also count all of the hours from 0-55, by counting up in multiples of five:
+    \n\n0 * 5 == 0
+    \n1 * 5 = 5
+    \n2 * 5 = 10
+    \n...
+    \n11 * 5 = 55
+    \n\nWe are now going to use this information to work out the time with our squares.
+        Any red squares value is added to the hours, any green squares value is added to the minutes, any blue square is added to both, and grey squares are ignored.
+    \n\nLook at the following picture:</string>
+    <string name="eightfive">HOURS: Our 5 square is red, our 2 square is red, and our 1 square is blue. We add all these to the hours: 5 + 2 + 1 = 8
+    \n\nMINUTES:We have no green squares, but our 1 square is blue: 1 * 5 = 5
+    \n\nSo our time is 8:05</string>
+    <string name="twothirtyfive">HOURS: 2
+    \nMINUTES: (2 + 5) * 5 = 7 * 5 = 35
+    \nThe time is 2:35</string>
+    <string name="sixfifty">The time is 6:50</string>
 
 </resources>
