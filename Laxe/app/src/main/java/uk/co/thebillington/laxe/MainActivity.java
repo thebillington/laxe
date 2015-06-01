@@ -1,6 +1,7 @@
 package uk.co.thebillington.laxe;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,6 +13,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(MainActivity.this);
+        dlgAlert.setPositiveButton("Okay", null);
+        dlgAlert.setTitle("Have you added the widget?");
+        dlgAlert.setMessage("To use the functionality of the clock please go to your home screen and add the 'Fibonacci Clock' widget.");
+        dlgAlert.create().show();
     }
 
 
