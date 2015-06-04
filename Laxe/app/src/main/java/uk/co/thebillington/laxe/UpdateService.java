@@ -72,7 +72,7 @@ public class UpdateService extends Service {
         int minutes = c.get(Calendar.MINUTE);
         double mins = (double) minutes / 5;
         minutes = ((int) (mins + 0.5)) * 5;
-        if (minutes == 60) {
+        if (minutes >= 58) {
             minutes = 0;
             hour += 1;
         }
